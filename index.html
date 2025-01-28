@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guía Turística PWA</title>
+  <link rel="stylesheet" href="style.css"> <!-- Vincula tu archivo CSS -->
+  <link rel="manifest" href="manifest.json">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <!-- Incluir CSS y JS de Leaflet Routing Machine -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.css" />
+  <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Guía Turística</h1>
+  </header>
+  <main>
+    <div id="map"></div> <!-- Aquí se mostrará el mapa -->
+    <!-- Botón para actualizar ubicación -->
+    <button id="updateLocationBtn">Actualizar ubicación</button>
+    <!-- Botón para mostrar la ruta -->
+    <button id="showRouteBtn">Mostrar ruta</button>
+  </main>
+  <footer>
+    <p>&copy; 2025 Guía Turística PWA</p>
+  </footer>
+  <script src="app.js"></script> <!-- Vincula tu archivo JS -->
+</body>
+</html>
