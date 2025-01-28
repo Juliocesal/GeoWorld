@@ -62,7 +62,7 @@ function updateUserLocation() {
           radius: searchRadius,
         }).addTo(map);
 
-        
+        // Agregar los lugares turísticos
         addLocation(32.53159553695682, -117.03643604488893, 'Avenida Revolución', 'Es la avenida más conocida de Tijuana, llena de tiendas, bares y restaurantes, ideal para disfrutar de la cultura local y la vida nocturna.', 5, latitude, longitude, searchRadius);
         addLocation(32.530468358048886, -117.02309510626823, 'Museo de las Californias', 'Un museo dedicado a la historia y cultura de Baja California, ideal para los amantes de la historia.', 4, latitude, longitude, searchRadius);
         addLocation(32.52205127864349, -117.12554648295162, 'Playas de Tijuana', 'Hermosas playas en la zona costera de Tijuana, donde puedes disfrutar de un ambiente relajado y diversas actividades acuáticas.', 5, latitude, longitude, searchRadius);
@@ -80,10 +80,9 @@ function updateUserLocation() {
         addLocation(32.53884171837604, -116.94109703874197, 'Parque de la Amistad', 'Un parque familiar con áreas verdes, zonas deportivas y juegos para niños.', 4, latitude, longitude, searchRadius);
         addLocation(32.452979548069536, -116.84037453406044, 'Essilor Luxottica', 'Trabajo', 4, latitude, longitude, searchRadius);
         addLocation(32.452979548069536, -116.84037453406044, 'UTT', 'Escuela', 4, latitude, longitude, searchRadius);
-        map.setView([latitude, longitude], 15); // Centrar el mapa en la ubicación del usuario
-        map.fitBounds(userCircle.getBounds()); // Ajustar el mapa al círculo de búsqueda
-        
-        map.setView([latitude, longitude], 15); // Centrar el mapa en la ubicación del usuario
+
+        // Centrar el mapa en la ubicación del usuario
+        map.setView([latitude, longitude], 15);
         map.fitBounds(userCircle.getBounds()); // Ajustar el mapa al círculo de búsqueda
       },
       () => {
@@ -139,10 +138,8 @@ function handleOrientation(event) {
 
   // Mover el mapa en función del desplazamiento
   const currentCenter = map.getCenter();
-  map.setView([currentCenter.lat - offsetY, currentCenter.lng + offsetX], map.getZoom());
+  map.setView([currentCenter.lat + offsetY, currentCenter.lng + offsetX], map.getZoom());
 }
 
-// Verificar si el dispositivo soporta la orientación
-if (window.DeviceOrientationEvent) {
-  window.addEventListener('deviceorientation', handleOrientation);
-}
+// Añadir un listener de orientación
+window.addEventListener('deviceorientation', handleOrientation);
